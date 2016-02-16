@@ -107,12 +107,17 @@ margin: 2px !important;
 header("Content-Type: text/html; charset=UTF-8");
 define("IMAGE_DIR", "./images/table/");
 $table = array(
-	       'img' => array('kaikoTH.jpg', 'yama.jpg'),
+	       'img' => array('kaikoTH.jpg', 'yanma.jpg', 'umi.jpg', 'kawagera.jpg', 'dro.jpg'),
 	       'url' => array('', ''),
-	       'caption1' => array('カイコガ', 'オニヤンマ'),
-	       'caption2' => array('Silkmoth <i>(Bombyx mori)</i>', 'Spiketail <i>(Anotogaster sieboldii)</i>')
+	       'caption1' => array('カイコガ', 'オニヤンマ', 'ウミザリガニ', 'カワゲラ', 'キイロショウジョウバエ'),
+	       'caption2' => array('Silkmoth <i>(Bombyx mori)</i>', 'Spiketail <i>(Anotogaster sieboldii)</i>',
+				   'Lobster <i>(Homarus americanus)</i>', 'Stonefly <i>(Kamimuria tibialis)</i>',
+				   'Fruit-fly <i>Drosophila melanogaster)</i>')
 	       );
 
+  print_r($table);
+print(sizeof($table['img']));
+print($table['img'][0]);
 ?>
 
 <h1>Grid design</h1>
@@ -129,8 +134,9 @@ $table = array(
 
 <?php 
   for($i=0; $i<15; $i++){
+    $j = $i % sizeof($table['img']);
     print ('<div class="item, slide"><a href="https://invbrain.neuroinf.jp/modules/newdb1/detail.php?id=59">
-  <figure><img class="transform01" src="'.IMAGE_DIR.'kaikoTH.jpg" width="250px" height="100px"/>');
+  <figure><img class="transform01" src="'.IMAGE_DIR.$table['img'][$j].'" width="250px" height="100px"/>');
     print('<figcaption><h3>カイコガ</h3><p>Silkmoth <i>(Bombyx mori)</i></p></figcaption>');
     print('</figure></a></div>');
   }
