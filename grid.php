@@ -2,9 +2,11 @@
 <body>
 <style type="text/css"><!--
    .tile {
- width: 900px !important;
+   /* width: 900px !important;
  margin-left: 3% !important;
+   */
  }
+
    .tile, .tile tr, .tile td, .tile img, .tile figure{
      background-color: #000;
      margin: 0px;
@@ -13,6 +15,18 @@
    .tile td{
  width: 300px;
  }
+   .tile div{
+ }
+
+   .tile figure{
+ margin: 0px;
+ padding: 0px;
+ }
+   .item{
+    }
+   .grid_table{
+    }
+
 
    .slide figure {
  position: relative;
@@ -65,12 +79,18 @@ color: #fff;
 }
 
 .item {
+ }
+
+.red_block{
 width: 300px;
 height: 150px;
-  background-color: #ac4d4d;
+  background-color: #dd0000;
   border: solid;
+  border-color: #fff;
  }
+
 -->
+
 </style>
 
 <script src="../shared_js/masonry.pkgd.min.js"></script>
@@ -87,25 +107,43 @@ $table = array(
 
 ?>
 
-<h1>variable grid implement (masonry)</h1>
-<div class="js-masonry">
-<div class="item"></div>
-<div class="item"></div>
-<div class="item"></div>
-<div class="item"></div>
-<div class="item"></div>
-<div class="item"></div>
+<h1>Grid design</h1>
+
+<h2>Variable Grid Implement2 (masonry)</h2>
+<div class="js-masonry" data-masonry-options='{"columnWidth":306, "transitionDuration":"0.3s"}'>
+<?php 
+  for($i=0; $i<8; $i++){
+    print ('<div class="item"><div class="red_block"></div></div>');
+  }
+?>
+
+<?php 
+  /*
+  for($i=0; $i<8; $i++){
+    print ('<div class="item, slide"><a href="https://invbrain.neuroinf.jp/modules/newdb1/detail.php?id=59">
+  <figure><img class="transform01" src="'.IMAGE_DIR.'kaikoTH.jpg" width="300px" />
+  <figcaption>
+  <h3>カイコガ</h3>
+  <p>Silkmoth <i>(Bombyx mori)</i></p>
+  </figcaption>
+  </figure>
+  </a>
+</div>');
+  }
+  */
+?>
 </div>
 
 
 
-<h1>Table implement</h1>
+
+<h2>Table Implement</h2>
 
 <table class="tile">
   <tbody>
   <tr>
   <td class="slide"><a href="https://invbrain.neuroinf.jp/modules/newdb1/detail.php?id=59">
-  <figure><img alt="Camera" class="transform01" src="<?php echo IMAGE_DIR ?>kaikoTH.jpg" width="300px" />
+  <figure><img class="transform01" src="<?php echo IMAGE_DIR ?>kaikoTH.jpg" width="300px" />
 
   <figcaption>
   <h3>カイコガ</h3>
