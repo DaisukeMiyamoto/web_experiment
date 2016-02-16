@@ -31,8 +31,9 @@
    .slide figure {
  position: relative;
  overflow: hidden;
- width: 300px
+ width: 250px
      }
+
    .slide figcaption {
  position: absolute;
  top: -100%;
@@ -64,7 +65,7 @@ figure:hover .transform01 {
  transform: scale(1.2);
  }
 figure h3 {
-padding: 20px 0 5px;
+padding: 0px;
 color: #fff;
   font-size: 24px;
   text-align: center;
@@ -78,8 +79,6 @@ color: #fff;
   font-weight: 400;
 }
 
-.item {
- }
 
 .red_block{
 width: 300px;
@@ -89,6 +88,15 @@ height: 150px;
   border-color: #fff;
  }
 
+.item ,.item figure, .item div{
+margin: 0px !important;
+padding: 0px;
+width: 100%;
+}
+
+figure{
+margin: 2px !important;
+}
 -->
 
 </style>
@@ -110,27 +118,22 @@ $table = array(
 <h1>Grid design</h1>
 
 <h2>Variable Grid Implement2 (masonry)</h2>
-<div class="js-masonry" data-masonry-options='{"columnWidth":306, "transitionDuration":"0.3s"}'>
-<?php 
-  for($i=0; $i<8; $i++){
-    print ('<div class="item"><div class="red_block"></div></div>');
-  }
-?>
-
+<div class="js-masonry" data-masonry-options='{"columnWidth":254, "transitionDuration":"0.3s"}'>
 <?php 
   /*
   for($i=0; $i<8; $i++){
-    print ('<div class="item, slide"><a href="https://invbrain.neuroinf.jp/modules/newdb1/detail.php?id=59">
-  <figure><img class="transform01" src="'.IMAGE_DIR.'kaikoTH.jpg" width="300px" />
-  <figcaption>
-  <h3>カイコガ</h3>
-  <p>Silkmoth <i>(Bombyx mori)</i></p>
-  </figcaption>
-  </figure>
-  </a>
-</div>');
+    print ('<div class="item"><div class="red_block"></div></div>');
   }
   */
+?>
+
+<?php 
+  for($i=0; $i<15; $i++){
+    print ('<div class="item, slide"><a href="https://invbrain.neuroinf.jp/modules/newdb1/detail.php?id=59">
+  <figure><img class="transform01" src="'.IMAGE_DIR.'kaikoTH.jpg" width="250px" height="100px"/>');
+    print('<figcaption><h3>カイコガ</h3><p>Silkmoth <i>(Bombyx mori)</i></p></figcaption>');
+    print('</figure></a></div>');
+  }
 ?>
 </div>
 
