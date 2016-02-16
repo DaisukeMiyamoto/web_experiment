@@ -63,9 +63,17 @@ color: #fff;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
+
+.item {
+width: 300px;
+height: 150px;
+  background-color: #ac4d4d;
+  border: solid;
+ }
 -->
 </style>
-<p>脳を持つ動物は脊椎動物だけではありません。多くの無脊椎動物は、実に多様な脳を発達させています。イカやタコの哺乳類に匹敵するほどの巨大な脳や、節足動物、特に昆虫の小さく精巧な脳は、自然選択が生み出した脳のなかでも最も興味深いものの１つと言えます。ここでは、6門、35目、47種の無脊椎動物とその脳および中枢神経系全体の取り出し標本の写真を展示し、解説しています。画像を見ながら、脳の進化について考えるとよいでしょう。 　これらの画像は、教育、研究のためには自由に利用することができます。なお、画像、文章の著作権は、提供者（北海道大学・水波誠）にあります。</p>
+
+<script src="../shared_js/masonry.pkgd.min.js"></script>
 
 <?php
 header("Content-Type: text/html; charset=UTF-8");
@@ -77,8 +85,21 @@ $table = array(
 	       'caption2' => array('Silkmoth <i>(Bombyx mori)</i>', 'Spiketail <i>(Anotogaster sieboldii)</i>')
 	       );
 
-print_r($table);
 ?>
+
+<h1>variable grid implement (masonry)</h1>
+<div class="js-masonry">
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+</div>
+
+
+
+<h1>Table implement</h1>
 
 <table class="tile">
   <tbody>
